@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Mov.Market</title>
+    <link rel="stylesheet" href="logi.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <div id="page" class="site">
+     <div class="form-wrapper">
+      <img src="assets/pexels-joyston-judah-933054.jpg" alt="background">   
+       <div class="login">
+        <h1>Fazer Login</h1>
+           <form action="logi.php" method="post">
+            <div>
+                <input type="email" id="email" required placeholder=" " name="email">
+                <label for="email">Email</label>
+                <i class="ri-mail-line"></i>
+            </div>
+            <div>
+                <input type="password" id="password" required placeholder=" " name="password">
+                <label for="password">Senha</label>
+                <i class="ri-eye-line" id="togglePassword"></i>
+            </div>
+        
+            <div>
+                <button type="submit" name="submit">Login</button>
+            </div>
+            <div class="split">
+                <a href="cadastro.html">Não tem conta? Crie agora</a>
+            </div>
+           </form>
+       </div>
+     </div>
+    </div>
+
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+    
+        togglePassword.addEventListener('click', function (e) {
+            // alternar entre os tipos de input "password" e "text"
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // alterar o ícone do olho
+            this.classList.toggle('ri-eye-line');
+            this.classList.toggle('ri-eye-off-line');
+        });
+    </script>
+
+</body>
+</html>

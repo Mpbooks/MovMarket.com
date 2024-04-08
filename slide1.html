@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Produto</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            color: #b606ce;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #444;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            outline: none;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #b606ce;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+        }
+        input[type="submit"]:hover {
+            background-color: #b606ce;
+        }
+        .destaque {
+            border: 2px solid #b606ce;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Adicionar slide</h2>
+    <form action="../loja/upload1.php" method="post" enctype="multipart/form-data">
+        <div class="destaque">
+       
+        <label for="imagem">Imagem:</label>
+        <input type="file" id="imagem" name="imagem" required><br><br>
+        
+        <input type="submit" name="submit" value="Adicionar Slide">
+    </div>
+    </form>
+</body>
+</html>
