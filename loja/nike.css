@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sora:wght@100..800&display=swap');
+
+:root{
+
+    --primary-color:#f55951;
+    --secondary:#361d32;
+    --white:#ffffff;
+}
+
+.produtos{
+    color: var(--white);
+    font-family: 'Rubik', sans-serif;
+}
+
+.ima img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.sites{
+    display: flex;
+    
+}
+.produtos .itens{
+    position: relative;
+    max-width: 350px;
+    padding: 30px;
+    background-color: var(--secondary);
+    box-shadow: 0 10px 36px 0 rgb(0 0 0 / 45%);
+}
+
+.produtos .itens .brand{
+    width: 60px;
+    height: 40px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIj48cGF0aCBkPSJtMjU1Ljk0MyAyMzYuMzA1LTc5LjI4MyAyMC44MTNjLTI4LjAwNCA2Ljk0Ny01Mi40OTggMTYuMjA4LTc2LjEwMSA4LjEtMzIuMDg0LTEzLjg5LTMxLjUxMS01MC4wMzktNy41OTEtODguNDk3LTQyLjI4OCAzNS4wMDEtMTE4LjM5IDE0Ni45LTE1LjQ2NiAxNTguMjA0IDEzLjExMiAxLjcyNyAzNi40NTQtMi44OCA2MS44MS0xMy41NzlsMTE2LjYzMi00OC4wMDIgMjMwLjA1NS05NC4zMTYtMjAxLjQ3MSA0OS43NTktMjguNTg1IDcuNTE4eiIgZmlsbD0iI2ZmZmZmZiIgY2xhc3M9ImZpbGwtMDAwMDAwIj48L3BhdGg+PC9zdmc+);
+    background-size: cover;
+    background-position: center;
+}
+.produtos .itens .titles h2{
+   font-size: 20px;
+   font-weight: 500;
+   text-transform: uppercase;
+   margin-bottom: 30px;
+   color: var(--white);
+}
+
+.produtos .itens:hover .imagens img{
+    animation: motionProduct 2s infinite;
+}
+@keyframes motionProduct{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+}
+
+.produtos .itens .comprar button{
+    position: relative;
+    height: 50px;
+    border: 0;
+    outline: 0;
+    margin-right: -30px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--white);
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+}
+.produtos .itens .comprar button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    transition: background-color .3s;
+}
+.produtos .itens .comprar button:hover::before{
+    background-color: var(--white);
+}
+.produtos .itens .comprar span{
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform .3s, opacity .3s;
+}
+.produtos .itens .comprar button span{
+    transform: translateX(0);
+    opacity: 1;
+}
+.produtos .itens .comprar button i{
+    color: var(--white);
+    padding-right: 12px;
+    margin-left: 24px;
+    z-index: 10;
+}
+.produtos .itens:hover .comprar button i{
+    animation: motionArrow 1.5s infinite;
+}
+@keyframes motionArrow {
+    0%, 100%{transform: translateX(0);}
+    50%{transform: translateX(5px);}
+}
+.produtos .itens:hover .comprar button i{
+    color: var(--primary-color);
+    animation: runArrow .5s forwards;
+}
+@keyframes runArrow {
+    33%{
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    66%{
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.produtos .itens  .preco{
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--white);
+}
+
+.produtos .itens .comprar{
+    margin-left: 66%;
+    margin-top: -40px;
+}
+
+.compra{
+    color: wheat;
+}
+
+@media screen and (min-width:568px){
+    .produtos .itens .ima{
+        transition: transform .3s;
+    }
+    .produtos .itens:hover .imagens{
+        transform: scale(1.25) translate3d(30%, -20%, 0);
+    }
+    .produtos .itens .imagens::before {
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: #a59d9d;
+        border-radius: 50%;
+        top: 25%;
+        right: 0;
+        filter: blur(90px);
+        opacity: 0;
+        transition: opacity .7s;
+    }
+    .produtos .itens:hover .imagens::before{
+      opacity: .75;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .produtos .itens{
+        justify-content: center;
+    }
+   
+}
